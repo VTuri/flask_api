@@ -3,6 +3,7 @@ from flask import Flask, jsonify, abort, make_response, request
 
 app = Flask(__name__)
 
+# JSON mockup data
 tasks = [
     {
         'id': 1,
@@ -25,6 +26,8 @@ tasks = [
 ]
 
 
+# GET to retrive data from the API
+# abort(404)
 @app.route('/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id):
     task = [task for task in tasks if task['id'] == task_id]
